@@ -1,6 +1,6 @@
-#pip install PyQt5 
+#pip install PyQt5
 #pip install PyQt5-tools
-#impprt the following modules
+#import the following modules
 
 import sys
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
@@ -26,7 +26,14 @@ class DigitalClock(QWidget):
         self.time_label.setAlignment(Qt.AlignCenter)
         self.time_label.setStyleSheet("font-size:150px; color:green;")
 
-
+        font_id= QFontDatabase.addApplicationFont("digital-7 (mono).ttf")
+        font_families= QFontDatabase.applicationFontFamilies(font_id)
+        if font_families:
+            digital_font= QFont(font_families[0],72)
+        else:
+            digital_font= QFont("Arial",72)
+        self.time_label.setFont(digital_font)
+        self.time_label.setStyleSheet("color: green;")
         self.setStyleSheet("background-color:black;")
 
         # Connect and start timer
@@ -45,4 +52,3 @@ if __name__ == "__main__":
     clock = DigitalClock()
     clock.show()
     sys.exit(app.exec_())
-
