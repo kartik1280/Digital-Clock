@@ -26,7 +26,7 @@ class DigitalClock(QWidget):
         self.time_label.setAlignment(Qt.AlignCenter)
         self.time_label.setStyleSheet("font-size:150px; color:green;")
 
-        font_id= QFontDatabase.addApplicationFont("digital-7 (mono).ttf")
+        font_id= QFontDatabase.addApplicationFont("") #enter your font name (.ttf)
         font_families= QFontDatabase.applicationFontFamilies(font_id)
         if font_families:
             digital_font= QFont(font_families[0],72)
@@ -52,4 +52,5 @@ if __name__ == "__main__":
     clock = DigitalClock()
     clock.show()
     sys.exit(app.exec_())
+
 
