@@ -1,3 +1,7 @@
+#pip install PyQt5 
+#pip install PyQt5-tools
+#impprt the following modules
+
 import sys
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
 from PyQt5.QtCore import QTimer, QTime, Qt
@@ -41,3 +45,4 @@ if __name__ == "__main__":
     clock = DigitalClock()
     clock.show()
     sys.exit(app.exec_())
+
